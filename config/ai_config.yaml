@@ -1,0 +1,55 @@
+# AI 配置文件
+
+# 默认使用的 AI 提供商: claude, openai, deepseek, ollama
+default_provider: claude
+
+# 是否启用 AI 结果缓存
+enable_cache: true
+# 缓存有效期（小时）
+cache_ttl_hours: 24
+
+# LLM 参数配置
+max_tokens: 4096
+temperature: 0.7
+
+# Claude 配置
+claude:
+  model: claude-3-5-sonnet-20241022
+  # API Key 通过环境变量 ANTHROPIC_API_KEY 设置
+  api_key: null
+
+# OpenAI 配置
+openai:
+  model: gpt-4
+  # API Key 通过环境变量 OPENAI_API_KEY 设置
+  api_key: null
+  base_url: null
+
+# DeepSeek 配置
+deepseek:
+  model: deepseek-chat
+  # API Key 通过环境变量 DEEPSEEK_API_KEY 设置
+  api_key: null
+  base_url: https://api.deepseek.com
+
+# Ollama 配置（本地模型）
+ollama:
+  model: llama3
+  base_url: http://localhost:11434
+
+# 分析深度配置
+analysis_levels:
+  brief:
+    max_readme_length: 2000
+    focus: "项目简介和核心功能"
+  standard:
+    max_readme_length: 8000
+    focus: "全面分析项目功能、技术栈和使用场景"
+  deep:
+    max_readme_length: 20000
+    focus: "深入分析代码质量、架构设计和学习价值"
+
+# 并发控制
+concurrency:
+  max_parallel_requests: 3
+  request_delay: 1.0
